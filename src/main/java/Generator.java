@@ -16,7 +16,7 @@ public class Generator {
 
         char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".toCharArray(); // create char[] of letters
 
-       try(Writer out=new BufferedWriter(new FileWriter(generatedFile));) { // create writer which will write text to our generated file
+       try(Writer out=new BufferedWriter(new FileWriter(generatedFile))) { // create writer which will write text to our generated file
 
            for (int i = 0; i < countOfLines; i++) {   // in this loop we randomly choose letters and concat them to StringBuilder.
                                                       // Count of letters in one line is from 1 to maxLengthOfLine.
