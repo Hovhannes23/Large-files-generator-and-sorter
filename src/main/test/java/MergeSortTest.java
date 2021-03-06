@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class MergeSortTest {
 
    private static File file = new File("testFile.txt");
-   private static List<String> expectedList;
+   private static List<String> list;
 
     /**
      * after MergeSortTest launch program inserts data into file
@@ -35,26 +35,32 @@ public class MergeSortTest {
      */
     @BeforeClass
     public static void createList(){
-      expectedList = Arrays.asList("book", "kitchen", "glass", "car");
+      list = Arrays.asList("book", "kitchen", "glass", "car");
     }
+
 
     /**
      * Test if  MergerSort.fileToList(File file) method works correct
      * @throws IOException
      */
-
     @Test
     public void fileToListTest() throws IOException {
 
         List<String> actualList = MergeSort.fileToList(file);
-        Assert.assertThat(actualList,is(expectedList));
-
+        Assert.assertThat(actualList,is(list));
     }
 
 
-
+    /**
+     * test if MergerSort.divideAndSortList(List<String>list) method works correct
+     */
     @Test
     public void divideAndSortListTest() {
+
+        List<String> actualList = MergeSort.divideAndSortList(list);
+        List<String> expectedList = Arrays.asList("book","car","glass","kitchen");
+
+        Assert.assertThat(actualList,is(expectedList));
     }
 
     @Test
