@@ -6,9 +6,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        File file = Generator.generateFile(30, 10);
-        List<String> unsortedList = MergeSort.fileToList(file);
-        MergeSort.divideAndSortList(unsortedList);
+        File file = Generator.generateFile(30, 10);  // generate file with 30 lines and max length of lines is 10 (generatedFile.txt)
+        List<String> unsortedList = MergeSort.fileToList(file); // each line of this file we write to list as its element
+        MergeSort.divideAndSortList(unsortedList);  // then divide huge list into smaller ones, sort each of then
+                                                  // and then merge and sort then into bigger list. This list we write to sortedFile.txt
     }
 }
 
