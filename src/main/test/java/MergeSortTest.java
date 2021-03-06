@@ -16,6 +16,7 @@ public class MergeSortTest {
    private static File file = new File("testFile.txt");
    private static List<String> list;
 
+
     /**
      * after MergeSortTest launch program inserts data into file
      * @throws IOException
@@ -40,7 +41,7 @@ public class MergeSortTest {
 
 
     /**
-     * Test if  MergerSort.fileToList(File file) method works correct
+     * Test if method MergerSort.fileToList(File file)  works correct
      * @throws IOException
      */
     @Test
@@ -52,7 +53,7 @@ public class MergeSortTest {
 
 
     /**
-     * test if MergerSort.divideAndSortList(List<String>list) method works correct
+     * test if method MergerSort.divideAndSortList(List<String>list)  works correct
      */
     @Test
     public void divideAndSortListTest() {
@@ -63,11 +64,20 @@ public class MergeSortTest {
         Assert.assertThat(actualList,is(expectedList));
     }
 
-    @Test
-    public void writeListToFile() {
-    }
 
+    /**
+     * test if method MergeSort.mergeList works correct
+     */
     @Test
-    public void mergeList() {
+    public void mergeListTest() {
+
+        List<String>listL = Arrays.asList("book", "car", "glass", "kitchen");
+        List<String>listR = Arrays.asList("home", "mountain", "notebook", "xerox", "zoo");
+
+       List<String> actual = MergeSort.mergeList(listL,listR);
+       List<String> expected = Arrays.asList("book", "car", "glass", "home", "kitchen", "mountain", "notebook", "xerox", "zoo");
+
+       Assert.assertThat(actual,is(expected));
+
     }
 }
