@@ -29,8 +29,10 @@ public class MergeSort {
         List<String> listL = new ArrayList<>();
         List<String> listR = new ArrayList<>();
 
-        System.arraycopy(inputList,0,listL,0,inputList.size()/2);
-        System.arraycopy(inputList,inputList.size()/2,listR,0,inputList.size()-inputList.size()/2);
+
+
+        listL = inputList.subList(0,inputList.size()/2);
+        listR = inputList.subList(inputList.size()/2,inputList.size());
 
         listL = divideList(listL);
         listR = divideList(listR);
