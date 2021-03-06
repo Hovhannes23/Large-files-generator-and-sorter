@@ -4,3 +4,5 @@ Supposed that this content is large and can`t be placed in RAM.
 
 So the purpose is write code which can **divide** large content into many smaller ones, sort each of them and then **merge and sort** small contents into big one.
 After all write this content into file.
+
+In main method there are an example and comments how use module.
