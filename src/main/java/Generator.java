@@ -25,7 +25,6 @@ public class Generator {
                                 // randomly choose ints from 0 to 51. Work via StringBuilder in order to use memory efficiently
                        .mapToObj(c -> String.valueOf(chars[c])) // from char[] we get char by ints and convert its to String
                        .collect(Collectors.joining())); // then concat them to String
-               System.out.println(res);
                out.append(res); // write StringBuilder to generatedFile
                out.append("\n");
            }

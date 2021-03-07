@@ -10,14 +10,17 @@ public class MergeSort {
  * @param inputFile - from this file we read lines
  * @return lines
  */
-    public static List<String> fileToList (File inputFile) throws FileNotFoundException {
+    public static List<String> fileToList (File inputFile) throws IOException {
 
         List<String> lines = new ArrayList<>();
-        Scanner inputFileScanner= new Scanner(inputFile);
 
-        while (inputFileScanner.hasNextLine()){
-           lines.add(inputFileScanner.nextLine());
+        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        String line;
+
+        while(!((line=reader.readLine())==null)) {
+            lines.add(line);
         }
+        reader.close();
 
         return lines;
     }
